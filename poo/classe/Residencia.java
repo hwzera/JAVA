@@ -1,24 +1,25 @@
 package poo.classe;
 
-public class Residencia extends Construcao {
+public class Residencia extends Construcao implements Contrato {
 
     //atributos private = encapsulado proteger atributos
     private int num; 
     private String nome; 
     private boolean ocupada; //true or false 
-    private double valor; 
 
     //obrigando na criação do objeto se passar os parametros
 
-    public Residencia(String nome, boolean ocupada, int janelas, int portas, double valor, int num){
+    public Residencia(String nome, boolean ocupada){
         this.nome = nome;
         this.ocupada = ocupada;
-        this.qtoJanelas = janelas;
-        this.qtoPortas = portas;
-        this.num = num;
-
     }
-    super();
+    
+    public Residencia(int num, String nome, int qtoPortas, int qtoJanelas, boolean ocupada, double valor) {
+        super();
+        this.num = num;
+        this.nome = nome;
+        this.ocupada = ocupada;
+      }
 
       // após isso get and setter
 
@@ -62,6 +63,11 @@ public class Residencia extends Construcao {
     @Override
     public String toString(){
         return "Novo método toString";
+    }
+
+    @Override
+    public double area(Construcao obj){
+        return obj.getFrete() * obj.getFundo();
     }
 
 }

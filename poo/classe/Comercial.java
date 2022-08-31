@@ -11,6 +11,10 @@ public class Comercial extends Construcao{
         this.cnpjDono = cnpjDono;
     }
 
-
+    @Override
+    public double alterarValor(){
+        this.valor *= 1.2;
+        return this.valor;
+    }
 }
 

@@ -5,9 +5,28 @@ public abstract class Construcao {
 
     //encapsulamento || protegido todas classes tem acesso a elas
 
-    protected int qtoPortas; 
+    protected int qtoPortas;
+    protected double frete;
+    protected double fundo; 
     protected int qtoJanelas;
     protected double valor;
+
+
+    public double getFrete() {
+        return this.frete;
+    }
+
+    public void setFrete(double frete) {
+        this.frete = frete;
+    }
+
+    public double getFundo() {
+        return this.fundo;
+    }
+
+    public void setFundo(double fundo) {
+        this.fundo = fundo;
+    }
 
     public int getQtoPortas() {
         return this.qtoPortas;
@@ -33,4 +52,16 @@ public abstract class Construcao {
         this.valor = valor;
     }
     
+    public double alterarValor(){
+        this.valor *= 1.1;
+        return this.valor;
+    }
+
+    public double descontoVista(){
+        return this.valor * 0.05;
+    }
+
+    public String toString(){
+        return "ToString da super classe";
+    }
 }
